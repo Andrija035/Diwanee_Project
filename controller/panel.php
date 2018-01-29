@@ -25,7 +25,7 @@ class Panel extends Controller{
         elseif($_POST['panel'] != 'login' && $_POST['panel'] != 'register')
             header('Location: '. URL . 'panel');
         else
-            $this->$_POST['panel']($_POST);
+            $this->{$_POST['panel']}($_POST);
     }
     public function login($podaci){
         if(empty($podaci['user']) || empty($podaci['pass'])) {
